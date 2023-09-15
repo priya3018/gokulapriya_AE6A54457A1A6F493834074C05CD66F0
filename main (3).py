@@ -1,39 +1,32 @@
-class BankAccount:
+# Python program to create Bankaccount class
+# with both a deposit() and a withdraw() function
+class Bank_Account:
+    def _init_(self):
+        self.balance=0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+ 
+    def deposit(self):
+        amount=float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:",amount)
+ 
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+ 
+    def display(self):
+        print("\n Net Available Balance=",self.balance)
+ 
+# Driver code
   
-  def __intit__(self, account_number, account_holder_name, 
-inital_balance=0.0):
-    self.__account_number = account_number
-    self.__account_holder_name = account_holder_name
-    self.__account_balance = initial_balance
-    
-def deposit(self, amount):
-  if amount > 0:
-    self.__account_balance += amount
-    print("deposited ₹{}, New balance: ₹{}".format(amount, 
-                                          self.__account_balance))
-  else:
-    print("Invalid deposit amount.")
-
-def withdraw(self, amount):
-  if amount > 0 and amount <= self.__account_balance:
-    self.__account_balance -= amount
-    print("Withdrew ₹{}. New  balance: ₹{}".format(amount,         
-                                          self.__account_balance))
-  else:
-    print("Invalid wiithdrawl amount or insufficient balance.")
-
-def display_balance(self):
-  print("Account balance for {} (Account #{}: ₹{}".format(
-      self.__account_holder_name, self.__account_number,
-      self.__account_balance))
-
-  account= BankAccount(account_number = "1233456789",
-                       account_holder_name = "Priya", 
-                       initial_balance = 5000.0) 
-
-
-  account.display_balance()
-  account.deposit(500.0)
-  account.withdraw(200.0)
-  account.withdraw(20000.0)
-  account.display_balance()
+# creating an object of class
+s = Bank_Account()
+  
+# Calling functions with that class object
+s.deposit()
+s.withdraw()
+s.display()
